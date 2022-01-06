@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'ODcwMDU3ODgxMzk4MDI2MzEw.YQHOiw.Du0RrUiUAjWTFaCS5cJEpcFWOJg';
+const token = 'ODcwMDU3ODgxMzk4MDI2MzEw.YQHOiw.NmXn9Vbfl4iJgs-hNnO69TBTMcc';
 
 bot.on('guildMemberAdd', member =>{
 
