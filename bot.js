@@ -3,11 +3,12 @@ const { default: axios, Axios } = require('axios');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-require('dotenv/config');
 
 
-const token = process.env.token;
-
+const token = process.env["token"];
+if (!token) {
+    throw new Error("missing environment variable: DISCORD_TOKEN");
+}
 bot.on('guildMemberAdd', member =>{
 
     const channel = member.guild.channels.cache.find(ch => ch.name === 'benvenuto');
