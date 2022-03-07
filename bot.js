@@ -11,14 +11,14 @@ const token = process.env["token"];
 if (!token) {
     throw new Error("missing environment variable: DISCORD_TOKEN");
   }
-bot.on('guildMemberAdd', member =>{
+// bot.on('guildMemberAdd', member =>{
 
-    const channel = member.guild.channels.cache.find(ch => ch.name === 'benvenuto');
-    const attachment = new Discord.MessageAttachment('https://media.tenor.com/images/23bfe82695104bd86fe1b4c0e57d9179/tenor.gif');
-    if (!channel) return;
+//     const channel = member.guild.channels.cache.find(ch => ch.name === 'benvenuto');
+//     const attachment = new Discord.MessageAttachment('https://media.tenor.com/images/23bfe82695104bd86fe1b4c0e57d9179/tenor.gif');
+//     if (!channel) return;
 
-    channel.send('Nice Dick My Broda', attachment);
-});
+//     channel.send('Nice Dick My Broda', attachment);
+// });
 
 bot.on('message',message =>{
     if (message.content.startsWith('Bob')){
@@ -130,22 +130,22 @@ bot.on('message', async (message) => {
  
     }
     //
-        const prefix = "!";
-        const commandBody = message.content.slice(prefix.length);
-        const args = commandBody.split(' ');
-        const command = args.shift().toLowerCase();
-        if (command == "busca"){
-            const numArgs = args.map(x => parseFloat(x));
-            let str = String(numArgs[0])
-            if(str.length == 7 ){
-                str = "0" + str
-            }
-            const data = axios.get(`https://cep.awesomeapi.com.br/json/${str}`)
-            data.then((resp) => {
-                let respFix = "Endereço: " + resp.data.address + ", " + resp.data.district+ ", " + resp.data.city
-                message.channel.send(respFix)
-            }).catch((error) => console.log(error))
-        }
+        // const prefix = "!";
+        // const commandBody = message.content.slice(prefix.length);
+        // const args = commandBody.split(' ');
+        // const command = args.shift().toLowerCase();
+        // if (command == "busca"){
+        //     const numArgs = args.map(x => parseFloat(x));
+        //     let str = String(numArgs[0])
+        //     if(str.length == 7 ){
+        //         str = "0" + str
+        //     }
+        //     const data = axios.get(`https://cep.awesomeapi.com.br/json/${str}`)
+        //     data.then((resp) => {
+        //         let respFix = "Endereço: " + resp.data.address + ", " + resp.data.district+ ", " + resp.data.city
+        //         message.channel.send(respFix)
+        //     }).catch((error) => console.log(error))
+        // }
     
         
 })
