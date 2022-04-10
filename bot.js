@@ -74,7 +74,7 @@ bot.on('message',message =>{
     }
     if (message.content === "class"){
         const classes = ["Bardo", "Paladino", "Mago", "Feiticeiro", "Druida","Ladino","Guerreiro","Cozinheiro","Meretriz","Major","Degustador de Casadas"]
-        const raças = ["Orc","Elfo","Anão","Judeu","Humano","Palestino","Draconato","Lizard","Tielfing", "Devorador de Mentes"]
+        const raças = ["Orc","Elfo","Anão","Humano","Draconato","Lizard","Tielfing", "Devorador de Mentes"]
         const index1 = Math.floor(Math.random() * 10 )
         const index2 = Math.floor(Math.random() * 9 )
         message.channel.send("Você será um "+ classes[index1] +" " + raças[index2])
